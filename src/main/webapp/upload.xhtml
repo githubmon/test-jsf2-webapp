@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:hh="http://custom/jsf/html">
+    <h:head>
+        <title>JSF 2.0 and Servlet 3.0 file upload test</title>
+        <style>label { float: left; display: block; width: 75px; }</style>
+    </h:head>
+    <h:body>
+        <h:form id="form" method="post" enctype="multipart/form-data">
+            <h:outputLabel for="text">Text:</h:outputLabel>
+            <h:inputText id="text" value="#{uploadBean.text}" />
+            <br />
+            
+<!--             <h:outputLabel for="file">File:</h:outputLabel> -->
+            
+<!--             <hh:inputFile id="file" value="#{uploadBean.file}"> -->
+<!--             	<f:validator validatorId="fileValidator" /> -->
+<!--             </hh:inputFile> -->
+            
+<!--             <h:outputText value="File #{uploadBean.file.name} successfully uploaded!"  -->
+<!--                 rendered="#{not empty uploadBean.file}" /> -->
+<!--             <br /> -->
+            <h:selectManyCheckbox id="check" layout="pageDirection" value="#{uploadBean.check}">
+                <f:selectItem itemLabel="Check 1:" itemValue="check1" />
+                <f:selectItem itemLabel="Check 2:" itemValue="check2" />
+            </h:selectManyCheckbox>
+            <h:commandButton value="submit" action="#{uploadBean.submit}" />
+            <h:messages />
+        </h:form>
+    </h:body>
+</html>
